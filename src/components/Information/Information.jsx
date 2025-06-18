@@ -1,14 +1,19 @@
 import React from 'react';
-import Delivery from "../icons/Delivery/Delivery.jsx";
+import DeliveryIcon from "../icons/DeliveryIcon/DeliveryIcon.jsx";
 import Support from "../icons/Support/Support.jsx";
 import Payment from "../icons/Payment/Payment.jsx";
+const fillStyle = {
+	width: "70px",
+	height: "70px",
+	fill:"#46BB22"
+}
 const Information = () => {
 	return (
 		<section className="section_03">
 			<h2 className="dark">delivery and payment</h2>
 			<div className="section_03__info">
 				<div className="delivery">
-					<Delivery />
+					<DeliveryIcon {...fillStyle} />
 					<h3>Delivery</h3>
 					<p className="sub_text">DAILY FROM 06:00 TO 12:00</p>
 					<p>Choose any convenient 2-hour interval. Healthy food delivery in
@@ -19,7 +24,7 @@ const Information = () => {
 					</p>
 				</div>
 				<div className="support">
-		<Support/>
+		<Support {...fillStyle}/>
 					<h3>Support</h3>
 					<p className="sub_text">24/7 and 7 days a week</p>
 					<p>If you have any questions or difficulties with the receipt,
@@ -30,7 +35,7 @@ const Information = () => {
 					</p>
 				</div>
 				<div className="payment">
-					<Payment/>
+					<Payment {...fillStyle}/>
 					<h3>Payment</h3>
 					<p className="sub_text">by any convenient method</p>
 					<p>We do everything so that you can pay for the goods in the most

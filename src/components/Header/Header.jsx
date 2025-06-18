@@ -4,6 +4,16 @@ import React from "react";
 import PhoneIcon from "../icons/PhoneIcon/PhoneIcon.jsx";
 import ClockIcon from "../icons/ClockIcon/ClockIcon.jsx";
 import CartIcon from "../icons/CartIcon/CartIcon.jsx";
+const iconStyle = {
+	width: "20px",
+	height: "20px",
+	fill:"#ffffff"
+}
+const cartStyle = {
+	width: "20px",
+	height: "18px",
+	fill:"#ffffff"
+}
 
 const Header = () => {
 	return (
@@ -28,7 +38,7 @@ const Header = () => {
 				</div>
 				<div className="header__contact phone">
 					{/*<Styled.PhoneIcon font={20}/>*/}
-					<PhoneIcon sx={{ width: '18px', height: '18px' }}/>
+					<PhoneIcon {...iconStyle}/>
 					<div>
 						<p className="tel">050 145-28-41</p>
 						<p className="time">support 0800 574 54 44</p>
@@ -36,7 +46,7 @@ const Header = () => {
 
 				</div>
 				<div className="header__contact time">
-					<ClockIcon sx={{ width: '24px', height: '24px' }}/>
+					<ClockIcon {...iconStyle} />
 					<div>
 						<p className="tel">Store Opening</p>
 						<p className="time">daily from 8.00 to 21.00</p>
@@ -47,7 +57,7 @@ const Header = () => {
 
 					<div className="header__cart">
 						<button className="header__button button cart">
-							<CartIcon sx={{ width: '24px', height: '20px' }}/>
+							<CartIcon {...cartStyle}/>
 							<p>cart</p>
 							<p
 								className="amount-items-null"

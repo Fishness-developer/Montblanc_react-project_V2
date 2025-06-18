@@ -19,28 +19,38 @@
 	}
 
 	&__container.phone {
-		background: url("../../images/svg/phone_small.svg") 0 50% no-repeat;
+//		background: url("../../images/svg/phone_small.svg") 0 50% no-repeat;
 		padding-left: 40px;
 		justify-content: flex-start;
-		gap: 10px;
+		gap: 20px;
 	}
 
 	&__container.email {
-		background: url("../../images/svg/email_small.svg") 0 50% no-repeat;
+//		background: url("../../images/svg/email_small.svg") 0 50% no-repeat;
 		padding-left: 40px;
 		justify-content: flex-start;
-		gap: 10px;
+		gap: 20px;
 	}
 
 	&__container.support {
-		background: url("../../images/svg/support_small.svg") 0 50% no-repeat;
+//		background: url("../../images/svg/support_small.svg") 0 50% no-repeat;
 		padding-left: 40px;
 		justify-content: flex-start;
-		gap: 10px;
+		gap: 20px;
+	}
+	&__container.icons {
+		align-items: center;
+		justify-content: flex-start;
+		gap: 20px;
+
+		p{
+			margin-bottom: 5px;
+		}
 	}
 
 	span.black {
 		color: var(--color-dark);
 		font-weight: 600;
+		margin-right: 5px;
 	}
 }
