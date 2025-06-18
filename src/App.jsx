@@ -1,8 +1,7 @@
-// App.jsx
-import './index.css';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Layout from "./components/Layout/Layout.jsx";
 import Main from "./pages/Main/Main.jsx";
+import './styles/styles.scss'
 
 
 const App = () => {

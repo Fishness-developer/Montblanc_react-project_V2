@@ -28,7 +28,7 @@ const Header = () => {
 				</div>
 				<div className="header__contact phone">
 					{/*<Styled.PhoneIcon font={20}/>*/}
-					<PhoneIcon/>
+					<PhoneIcon sx={{ width: '18px', height: '18px' }}/>
 					<div>
 						<p className="tel">050 145-28-41</p>
 						<p className="time">support 0800 574 54 44</p>
@@ -36,7 +36,7 @@ const Header = () => {
 
 				</div>
 				<div className="header__contact time">
-					<ClockIcon />
+					<ClockIcon sx={{ width: '24px', height: '24px' }}/>
 					<div>
 						<p className="tel">Store Opening</p>
 						<p className="time">daily from 8.00 to 21.00</p>
@@ -47,7 +47,7 @@ const Header = () => {
 
 					<div className="header__cart">
 						<button className="header__button button cart">
-							<CartIcon/>
+							<CartIcon sx={{ width: '24px', height: '20px' }}/>
 							<p>cart</p>
 							<p
 								className="amount-items-null"

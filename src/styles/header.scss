@@ -185,8 +185,7 @@
 
 	&__contact.phone {
 		white-space: nowrap;
-		color: var(--color-white);
-//		background: url("../images/svg/phone.svg") 0 50% no-repeat;
+		@include font-face($font-size-regular * 1px, 300, var(--color-white));
 		padding-left: 30px;
 		display: flex;
 		align-items: center;
@@ -194,9 +193,8 @@
 	}
 
 	&__contact.time {
+		@include font-face($font-size-regular * 1px, 300, var(--color-white));
 		white-space: nowrap;
-		color: var(--color-white);
-//		background: url("../images/svg/mdi_clock-outline.svg") 0 50% no-repeat;
 		padding-left: 30px;
 		display: flex;
 		align-items: center;

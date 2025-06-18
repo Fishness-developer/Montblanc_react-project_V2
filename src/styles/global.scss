@@ -15,8 +15,9 @@ body {
 .button,
 input {
   border-radius: #{$border-radius-button}px;
-  height: #{$height-button}px;
-  padding: #{$padding-button}px;
+//  height: #{$height-button}px;
+  height: auto;
+  padding: #{$padding-button} ;
   text-decoration: none;
   @include font-face($font-size-regular * 1px, 400, var(--color-white));
   text-transform: uppercase;
