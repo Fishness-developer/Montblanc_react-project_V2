@@ -14,13 +14,13 @@
 		white-space: nowrap;
 	}
 
-	&__menu-item a {
+	&__menu-item {
 		@include font-face($font-size-regular * 0.1rem, 300, var(--color-white));
 		text-transform: uppercase;
 		text-decoration: none;
 	}
 
-	&__menu-item a::after {
+	&__menu-item::after {
 		content: "";
 		position: relative;
 		display: flex;
@@ -31,12 +31,12 @@
 		background: var(--color-beige);
 	}
 
-	&__menu-item a:hover::after {
+	&__menu-item:hover::after {
 		width: 100%;
 
 	}
 
-	&__menu-item a:hover {
+	&__menu-item:hover {
 		color: var(--color-beige);
 	}
 }

@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"menu": "Farm gastronomy",
+		"submenu": []
+	},
+	{
+		"id": 2,
+		"menu": "Italian cheeses",
+		"submenu": []
+	},
+	{
+		"id": 3,
+		"menu": "Meat delicacies",
+		"submenu": [
+			{
+				"id": 1,
+				"sub": "Italian ice cream"
+			},
+			{
+				"id": 2,
+				"sub": "Italian sweets"
+			},
+			{
+				"id": 3,
+				"sub": "Italian cheeses"
+			},
+			{
+				"id": 4,
+				"sub": "Italian desserts"
+			}
+		]
+	},
+	{
+		"id": 4,
+		"menu": "Italian pasta",
+		"submenu": []
+	},
+	{
+		"id": 5,
+		"menu": "Olive oil",
+		"submenu": []
+	}
+
+]
+
+

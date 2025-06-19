@@ -1,7 +1,9 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import Layout from "./components/Layout/Layout.jsx";
+import LayoutMain from "./components/Layouts/LayoutMain.jsx";
 import Main from "./pages/Main/Main.jsx";
 import './styles/styles.scss'
+import Catalog from "./pages/Catalog/Catalog.jsx";
+import LayoutCatalog from "./components/Layouts/LayoutCatalog.jsx";
 
 
 const App = () => {
@@ -10,24 +12,19 @@ const App = () => {
 		<BrowserRouter>
 			<Routes>
 
-				<Route
-					path="/"
-					element={<Layout />}
-				>
-					<Route
-						index
-						element={<Main />}
-					/>
+				<Route path="/" element={<LayoutMain />}>
+					<Route index element={<Main />} />
 				</Route>
 
-				{/*<Route path="product/:id" element={<ProductDetailLayout />}>*/}
-				{/*  <Route index element={<ProductDetailPage />} />*/}
-				{/*</Route>*/}
+				<Route path="catalog" element={<LayoutCatalog />}>
+					<Route index element={<Catalog />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 
 
-	);
+)
+	;
 };
 
 export default App;
