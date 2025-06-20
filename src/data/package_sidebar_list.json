@@ -1,45 +1,45 @@
 [
 	{
 		"id": 1,
-		"menu": "Farm gastronomy",
-		"submenu": []
+		"category": "Farm gastronomy",
+		"subcategory": []
 	},
 	{
 		"id": 2,
-		"menu": "Italian cheeses",
-		"submenu": []
+		"category": "Italian cheeses",
+		"subcategory": []
 	},
 	{
 		"id": 3,
-		"menu": "Meat delicacies",
-		"submenu": [
+		"category": "Meat delicacies",
+		"subcategory": [
 			{
 				"id": 1,
-				"sub": "Italian ice cream"
+				"category": "Italian ice cream"
 			},
 			{
 				"id": 2,
-				"sub": "Italian sweets"
+				"category": "Italian sweets"
 			},
 			{
 				"id": 3,
-				"sub": "Italian cheeses"
+				"category": "Italian cheeses"
 			},
 			{
 				"id": 4,
-				"sub": "Italian desserts"
+				"category": "Italian desserts"
 			}
 		]
 	},
 	{
 		"id": 4,
-		"menu": "Italian pasta",
-		"submenu": []
+		"category": "Italian pasta",
+		"subcategory": []
 	},
 	{
 		"id": 5,
-		"menu": "Olive oil",
-		"submenu": []
+		"category": "Olive oil",
+		"subcategory": []
 	}
 
 ]

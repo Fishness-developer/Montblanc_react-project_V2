@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import allCatalogItems from '../../data/package_sidebar_list.json';
 
 const LeftSidebar = () => {
-	const [openIndex, setOpenIndex] = useState(null); // Хранит индекс открытого пункта меню
+	const [openIndex, setOpenIndex] = useState(null);
 
-	const handleItemClick = (index) => {
-		// Если кликнули на уже открытый пункт, закрываем его, иначе открываем новый
+	const handleItemClick = (event, index) => {
+		// Проверяем, был ли клик по элементу подменю
+		if (event.target.closest('.catalog__sublist')) {
+			return; // Не закрываем подменю, если клик был по подкатегории
+		}
 		setOpenIndex(openIndex === index ? null : index);
 	};
 
@@ -13,31 +17,27 @@ const LeftSidebar = () => {
 		<ul className="catalog__list">
 			{allCatalogItems.map((item, index) => (
 				<li
-					key={index}
+					key={item.id}
 					data-catalog-list
 					className={openIndex === index ? 'open' : ''}
-					onClick={() => handleItemClick(index)}
+					onClick={(event) => item.subcategory.length > 0 ? handleItemClick(event, index) : undefined}
 				>
-					{item.submenu.length > 0 ? (
-						// Предотвращаем переход по ссылке
-						<a href="#"	onClick={(e) => e.preventDefault()} >
-							{item.menu}
-						</a>
-					) :
-						// Для пунктов без подменю рендерим просто текст
-						(	item.menu	)
-					}
-
-					{item.submenu.length > 0 && (
+					<Link to={`/catalog/${item.category.toLowerCase().replace(/\s+/g, '-')}`}>
+						<span className="catalog__item">
+							{item.category}
+						</span>
+					</Link>
+					{item.subcategory.length > 0 && (
 						<ul
 							className={`catalog__sublist ${openIndex === index ? '' : 'hide_list'}`}
-
 						>
-							{item.submenu.map((subItem, subIndex) => (
-								<li key={subIndex}>
-									<a href="#" onClick={(e) => e.preventDefault()}>
-										{subItem.sub}
-									</a>
+							{item.subcategory.map((subItem, subIndex) => (
+								<li key={subItem.id}>
+									<Link to={`/catalog/${item.category.toLowerCase().replace(/\s+/g, '-')}/${subItem.category.toLowerCase().replace(/\s+/g, '-')}`}>
+										<span className="catalog__subitem">
+											{subItem.category}
+										</span>
+									</Link>
 								</li>
 							))}
 						</ul>

@@ -1,5 +1,6 @@
 import '../../styles/header.scss'
 import Logo from '../../assets/images/Logo.png';
+import { Link } from 'react-router-dom';
 import React from "react";
 import PhoneIcon from "../icons/PhoneIcon/PhoneIcon.jsx";
 import ClockIcon from "../icons/ClockIcon/ClockIcon.jsx";
@@ -20,16 +21,15 @@ const Header = () => {
 		<header className="header">
 			<div className="header__inner">
 
-				<a
+				<Link to={`/`}
 					className="header__logo logo"
-					href="/Montblanc_react-project_V2/public"
 				> <img
 					className="logo__image"
 					src={Logo}
 					alt="Mont Blank"
 					width="250"
 					height="84"
-				/> </a>
+				/> </Link>
 				<div className="header__menu services">
 					<ul>
 						<li className="header__menu-item"><a href="/">Registration</a></li>

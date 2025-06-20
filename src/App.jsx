@@ -4,6 +4,7 @@ import Main from "./pages/Main/Main.jsx";
 import './styles/styles.scss'
 import Catalog from "./pages/Catalog/Catalog.jsx";
 import LayoutCatalog from "./components/Layouts/LayoutCatalog.jsx";
+import Products from "./pages/Products/Products.jsx";
 
 
 const App = () => {
@@ -16,9 +17,13 @@ const App = () => {
 					<Route index element={<Main />} />
 				</Route>
 
-				<Route path="catalog" element={<LayoutCatalog />}>
+
+				<Route path="/catalog" element={<LayoutCatalog />}>
 					<Route index element={<Catalog />} />
+					<Route path=":category" element={<Products />} />
+					<Route path=":category/:subcategory" element={<Catalog />} />
 				</Route>
+
 			</Routes>
 		</BrowserRouter>
 

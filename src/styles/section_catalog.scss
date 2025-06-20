@@ -5,79 +5,106 @@
 	@include block-set(100%, auto, 50px 0, 0 auto, #F6F6F6);
 	display: flex;
 	justify-content: center;
+
 	h3 {
 		color: var(--color-dark);
 		margin: 0;
 		text-align: left;
 	}
+
 	&__container {
 		width: 1170px;
 		display: flex;
 		justify-content: space-between;
 		gap: 30px;
+
 		.left_sidebar {
 			width: 20%;
+
 			ul.catalog__list {
 				@include font-face(14px, 400, var(--color-dark));
 				display: flex;
 				flex-direction: column;
 				gap: 10px;
 				margin: 20px 0;
-				a {
-color: var(--color-dark);
+
+				.catalog__item, .catalog__subitem {
+					color: var(--color-dark);
 					text-decoration: none;
 					position: relative;
-					padding-right: 20px; /* Место для символа + */
+					padding-right: 20px;
 					display: flex;
 					width: 100%;
 					box-sizing: border-box;
+					cursor: pointer;
+					transition: color 0.3s ease;
 				}
-				a:hover {
+
+				.catalog__item:hover, .catalog__subitem:hover {
 					color: var(--color-green);
 				}
 			}
 		}
+
 		.right_sidebar {
 			width: 80%;
-			.section_01__promotions{
-				justify-content: left!important;
+
+			.section_01__promotions {
+				justify-content: left !important;
 			}
 		}
 	}
+
 	ul.catalog__list li ul {
 		margin-left: 20px;
+
 		li {
 			margin: 10px 0;
 		}
-		a {
-			padding-right: 0; /* Убираем отступ для вложенных <a> */
+
+		.catalog__subitem {
+			padding-right: 0;
+			text-decoration: none;
+		}
+
+		.catalog__subitem:hover {
+			color: var(--color-green);
 		}
 	}
+
+	ul.catalog__list li a {
+		text-decoration: none;
+	}
+
 	.hide_list {
 		max-height: 0;
 		overflow: hidden;
 		opacity: 0;
-//		transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+		transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
 	}
+
 	[data-catalog-list] ul:not(.hide_list) {
 		opacity: 1;
-//		transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
+		max-height: 1000px;
+		transition: max-height 0.3s ease-in, opacity 0.3s ease-in;
 	}
+
 	[data-catalog-list] ul {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
-	/* Стили для символов + и − */
+
 	[data-catalog-list] {
 		position: relative;
 		cursor: pointer;
 	}
-	[data-catalog-list]:hover{
+
+	[data-catalog-list]:hover .catalog__item {
 		color: var(--color-green);
-//		transition: .3s ease-in, opacity 0.3s ease-out;
 	}
-	[data-catalog-list] > a::after {
+
+	[data-catalog-list]:has(ul.catalog__sublist) .catalog__item::after {
 		content: "+";
 		position: absolute;
 		right: 0;
@@ -87,10 +114,11 @@ color: var(--color-dark);
 		display: block;
 		background: var(--color-green);
 		padding: 2px 5px;
-		line-height: 14px;
+		line-height: 1;
 		color: var(--color-white);
 	}
-	[data-catalog-list].open > a::after {
+
+	[data-catalog-list].open:has(ul.catalog__sublist) .catalog__item::after {
 		content: "−";
 	}
 }
