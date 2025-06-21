@@ -5,6 +5,7 @@ import './styles/styles.scss'
 import Catalog from "./pages/Catalog/Catalog.jsx";
 import LayoutCatalog from "./components/Layouts/LayoutCatalog.jsx";
 import Products from "./pages/Products/Products.jsx";
+import ProductPage from "./pages/Product/ProductPage.jsx";
 
 
 const App = () => {
@@ -21,7 +22,9 @@ const App = () => {
 				<Route path="/catalog" element={<LayoutCatalog />}>
 					<Route index element={<Catalog />} />
 					<Route path=":category" element={<Products />} />
-					<Route path=":category/:subcategory" element={<Catalog />} />
+					{/*<Route path=":category/:subcategory" element={<ProductPage />} />*/}
+					{/*<Route path=":category/:subcategory/:productId" element={<ProductPage />} />*/}
+					<Route path=":category/:productId" element={<ProductPage />} />
 				</Route>
 
 			</Routes>

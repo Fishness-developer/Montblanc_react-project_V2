@@ -1,11 +1,12 @@
 import React from 'react';
-
+import Spices from '../../assets/images/banners/banner_spices.png'
+import Cheeses from '../../assets/images/banners/banner_cheese.png'
 const Advertising = () => {
 	return (
 		<section className="section_02">
 			<div className="section_02__banner container">
 				<div className="section_02__banner container inner_left"><img
-					src="images/banners/banner_spices.png"
+					src={Spices}
 					width="955"
 					height="200"
 					alt=""
@@ -16,7 +17,7 @@ const Advertising = () => {
 					</div>
 				</div>
 				<div className="section_02__banner container inner_right"><img
-					src="images/banners/banner_cheese.png"
+					src={Cheeses}
 					width="965"
 					height="200"
 					alt=""

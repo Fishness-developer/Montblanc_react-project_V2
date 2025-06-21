@@ -27,21 +27,21 @@ const LeftSidebar = () => {
 							{item.category}
 						</span>
 					</Link>
-					{item.subcategory.length > 0 && (
-						<ul
-							className={`catalog__sublist ${openIndex === index ? '' : 'hide_list'}`}
-						>
-							{item.subcategory.map((subItem, subIndex) => (
-								<li key={subItem.id}>
-									<Link to={`/catalog/${item.category.toLowerCase().replace(/\s+/g, '-')}/${subItem.category.toLowerCase().replace(/\s+/g, '-')}`}>
-										<span className="catalog__subitem">
-											{subItem.category}
-										</span>
-									</Link>
-								</li>
-							))}
-						</ul>
-					)}
+					{/*{item.subcategory.length > 0 && (*/}
+					{/*	<ul*/}
+					{/*		className={`catalog__sublist ${openIndex === index ? '' : 'hide_list'}`}*/}
+					{/*	>*/}
+					{/*		{item.subcategory.map((subItem, subIndex) => (*/}
+					{/*			<li key={subItem.id}>*/}
+					{/*				<Link to={`/catalog/${item.category.toLowerCase().replace(/\s+/g, '-')}/${subItem.category.toLowerCase().replace(/\s+/g, '-')}`}>*/}
+					{/*					<span className="catalog__subitem">*/}
+					{/*						{subItem.category}*/}
+					{/*					</span>*/}
+					{/*				</Link>*/}
+					{/*			</li>*/}
+					{/*		))}*/}
+					{/*	</ul>*/}
+					{/*)}*/}
 				</li>
 			))}
 		</ul>

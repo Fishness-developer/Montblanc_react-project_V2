@@ -23,7 +23,7 @@ const Product = ({product}) => {
 			<p className="item-description">{product.title}</p>
 
 			<Link
-				to={`/product/${product.id}`}
+				to={`/catalog/${product.category.toLowerCase().replace(/\s+/g, '-')}/${product.id}`}
 				className="section_01__promotions-item-button button"
 				data-cart
 			>

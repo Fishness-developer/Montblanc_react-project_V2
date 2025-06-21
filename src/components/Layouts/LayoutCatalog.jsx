@@ -5,6 +5,7 @@ import Information from "../Information/Information.jsx";
 import Support from "../Support/Support.jsx";
 import Footer from "../Footer/Footer.jsx";
 import "../../styles/section_catalog.scss"
+import Advertising from "../Advertising/Advertising.jsx";
 
 
 const LayoutCatalog = () => {
@@ -15,7 +16,8 @@ const LayoutCatalog = () => {
 			<main>
 				<Outlet />
 			</main>
-
+			<Advertising />
+			<Information />
 			<Support />
 			<Footer />
 		</div>
