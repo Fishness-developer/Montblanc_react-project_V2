@@ -10,7 +10,7 @@ export const LanguageProvider = ({ children }) => {
 	const value = useMemo(() => ({ locale, setLocale }), [locale]);
 
 	return (
-		<LanguageContext.Provider>
+		<LanguageContext.Provider value={value}>
 			<IntlProvider locale={locale} messages={messages[locale]}>
 				{children}
 			</IntlProvider>
