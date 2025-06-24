@@ -1,27 +1,33 @@
 import '../../styles/header.scss'
 import Logo from '../../assets/images/Logo.png';
-import { Link } from 'react-router-dom';
-import React from "react";
+import {Link} from 'react-router-dom';
+import React, {useContext} from "react";
 import PhoneIcon from "../icons/PhoneIcon/PhoneIcon.jsx";
 import ClockIcon from "../icons/ClockIcon/ClockIcon.jsx";
 import CartIcon from "../icons/CartIcon/CartIcon.jsx";
+import LanguageContext from "../../context/LanguageContext/LanguageContext.jsx";
+
+
 const iconStyle = {
 	width: "20px",
 	height: "20px",
-	fill:"#ffffff"
+	fill: "#ffffff"
 }
 const cartStyle = {
 	width: "20px",
 	height: "18px",
-	fill:"#ffffff"
+	fill: "#ffffff"
 }
 
 const Header = () => {
+	// const {locale, setLocale} = useContext(LanguageContext)
+
 	return (
 		<header className="header">
 			<div className="header__inner">
 
-				<Link to={`/`}
+				<Link
+					to={`/`}
 					className="header__logo logo"
 				> <img
 					className="logo__image"
@@ -34,11 +40,13 @@ const Header = () => {
 					<ul>
 						<li className="header__menu-item"><a href="/">Registration</a></li>
 						<li className="header__menu-item"><a href="/">Login</a></li>
+						<li></li>
+						<li className="header__menu-item"><a href="/" onClick={()=>setLocale("en")}>En</a></li>
+						<li className="header__menu-item"><a href="/" onClick={()=>setLocale("ru")}>Ru</a></li>
 					</ul>
 				</div>
 				<div className="header__contact phone">
-					{/*<Styled.PhoneIcon font={20}/>*/}
-					<PhoneIcon {...iconStyle}/>
+					<PhoneIcon {...iconStyle} />
 					<div>
 						<p className="tel">050 145-28-41</p>
 						<p className="time">support 0800 574 54 44</p>
@@ -57,12 +65,13 @@ const Header = () => {
 
 					<div className="header__cart">
 						<button className="header__button button cart">
-							<CartIcon {...cartStyle}/>
+							<CartIcon {...cartStyle} />
 							<p>cart</p>
 							<p
 								className="amount-items-null"
 								data-amount
-							>0</p>
+							>0
+							</p>
 						</button>
 					</div>
 					<div className="header__drop-cart-container">

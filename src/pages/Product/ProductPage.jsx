@@ -25,7 +25,7 @@ const ProductPage = () => {
 						/>
 					</div>
 					<div className="description">
-						<h3>{product.title}</h3>
+						<h4>{product.title}</h4>
 						<p>{product.description}
 						</p>
 
